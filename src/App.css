@@ -13,6 +13,24 @@
   }
 }
 
+.loading-container {
+  margin: 0;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.note-under-title {
+  margin: 2em;
+  font-style: italic;
+}
+
+.loading-img {
+  max-width: 100%;
+  height: auto
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

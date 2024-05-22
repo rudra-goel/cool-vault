@@ -27,7 +27,6 @@ const LoginPage = (userState, setUserState) => {
     try {
       const user = await signIn(email, password)
 
-      console.log(user)
       
       navigate("/")
       
@@ -39,7 +38,7 @@ const LoginPage = (userState, setUserState) => {
 
   return (
     <div className="login-page">
-      <h2>Login</h2>
+      <h2>Login to R-Vault</h2>
       <form>
         <div className="input-group">
           <label>Email:</label>

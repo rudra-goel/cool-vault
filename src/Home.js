@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom"
 import { getUserData } from "./FirebaseFunctions.js"
 import PasswordRecord from './Components/PasswordRecord.js'
 import AddPassword from './Components/AddPassword.js'
+import Loading from "./Loading.js"
 
 export default function Home() {
 
@@ -34,12 +35,13 @@ export default function Home() {
     return (
       <div>
         <h1 className="welcome-label">Welcome back {userData.Name} </h1>
+        <p className="note-under-title" >Your data is secured on Google's backend servers and encrypted via my custom encryption scheme</p>
         <AddPassword userData={userData} update={setUserData} />
         <div className="my-passwords">
           {
             userData.Records.map((record, i) => {
               return (
-                <PasswordRecord id={i} data={record} userData={userData} update={setUserData} />
+                <PasswordRecord id={i} key={i} data={record} userData={userData} update={setUserData} />
               )
             })
           }
@@ -49,7 +51,7 @@ export default function Home() {
   } else {
     return (
       <div>
-        Loading
+        <Loading />
       </div>
     )
   }

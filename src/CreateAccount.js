@@ -42,7 +42,7 @@ const CreateAccountPage = () => {
 
   return (
     <div className="create-account-page">
-      <h2>Create Account</h2>
+      <h2>Create Account with R-Vault</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
           <label>Name:</label>

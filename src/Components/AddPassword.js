@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { addPasswordToUser, getUserData } from '../FirebaseFunctions';
+import { encryptString, decryptString } from '../Encryption';
+
 
 export default function AddPassword({userData, update}) {
     
@@ -33,9 +35,9 @@ export default function AddPassword({userData, update}) {
 
         let oldRecord = record;
 
-        const oldPassword = record.password
+        const encryptedPassword = encryptString(record.password, record.name)
 
-        oldRecord.password = oldPassword
+        oldRecord.password = encryptedPassword
 
         await addPasswordToUser(userData, oldRecord)
         

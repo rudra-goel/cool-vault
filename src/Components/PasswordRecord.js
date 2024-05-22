@@ -3,7 +3,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import { updatePasswordRecord, getUserData, deletePasswordRecord } from '../FirebaseFunctions';
-import { stringToBinary } from '../Encryption';
+import { encryptString, decryptString } from '../Encryption';
 
 
 export default function PasswordRecord({ id, data, userData, update }) {  
@@ -97,7 +97,7 @@ export default function PasswordRecord({ id, data, userData, update }) {
                 <label className="label-record">
                   Password:
                   <div className="password-field-record">
-                    <label className="input-record">{ showPassword ? data.password : password }</label>
+                    <label className="input-record">{ showPassword ? decryptString(data.password, data.name) : password }</label>
                   </div>
                 </label>
                 <button className="password-toggle-record" onClick={togglePasswordVisibility}>

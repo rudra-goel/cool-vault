@@ -23,7 +23,7 @@ export default function NavBar() {
       <div className="navbar">
           <Link to="home">
               <div className="left-section">
-                  <h1 className="website-title">Cool Vault</h1>
+                  <h1 className="website-title">R-Vault</h1>
               </div>
           </Link>
         <div className="right-section">
@@ -40,7 +40,7 @@ export default function NavBar() {
     <div className="navbar">
         <Link to="home">
             <div className="left-section">
-                <h1 className="website-title">Cool Vault</h1>
+                <h1 className="website-title">R-Vault</h1>
             </div>
         </Link>
       <div className="right-section">
